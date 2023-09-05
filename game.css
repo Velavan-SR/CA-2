@@ -1,0 +1,51 @@
+@font-face {
+    font-family: 'ninja';
+    src: url('./assessts/njnaruto.ttf');
+}
+
+*{
+    font-family: 'ninja',sans-serif ;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(./assessts/anime.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50vh;
+    justify-content: space-between;
+}
+
+#title,#score,#instructions{
+    font-size:x-large;
+    word-spacing: 9px;
+    color: beige;
+}
+
+#instructions{
+    color: rgb(0, 0, 0);
+}
+
+#instructions{
+    padding: 4%;
+    background-color: white;
+    opacity: 0.4;
+    border-radius: 15px;
+}
+
+img{
+    height: 300px;
+    width: 250px;
+}
+
+#game{
+    display: flex;
+    justify-content: space-between;
+}
