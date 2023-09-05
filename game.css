@@ -19,8 +19,9 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 50vh;
-    justify-content: space-between;
+    height: 57vh;
+    justify-content: start;
+    gap: 80px;
 }
 
 #title,#score,#instructions{
@@ -62,9 +63,13 @@ img{
         background-image: url(./assessts/mob.jpg);
         background-size: cover;
         background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
-
+    
     #content {
+        height: 100vh;
         text-align: center;
     }
     
