@@ -33,11 +33,18 @@ body{
     color: rgb(0, 0, 0);
 }
 
-#instructions{
-    padding: 4%;
+#instructions {
+    max-width: 100%; 
     background-color: white;
-    opacity: 0.4;
+    opacity: 0.3;
+    padding: 20px;
     border-radius: 15px;
+    text-align: center;
+}
+
+#instructions ol {
+    list-style-type: decimal;
+    padding-left: 20px;
 }
 
 img{
@@ -48,4 +55,29 @@ img{
 #game{
     display: flex;
     justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+    body{
+        background-image: url(./assessts/mob.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #content {
+        text-align: center;
+    }
+    
+    #game {
+        position: relative;
+    }
+    
+    #game img {
+        height: 150px;
+        width: 125px;
+    }
+    
+    #game img:nth-child(2) {
+        display: none;
+    }
 }
