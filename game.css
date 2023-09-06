@@ -7,6 +7,7 @@
     font-family: 'ninja',sans-serif ;
     padding: 0;
     box-sizing: border-box;
+    text-align: center;
 }
 
 body{
@@ -21,7 +22,7 @@ body{
     align-items: center;
     height: 57vh;
     justify-content: start;
-    gap: 80px;
+    gap: 70px;
 }
 
 #title,#score,#instructions{
@@ -66,10 +67,11 @@ img{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        
     }
     
     #content {
-        height: 100vh;
+        height: 82vh;
         text-align: center;
     }
     
