@@ -33,6 +33,7 @@ body{
 
 #instructions{
     color: rgb(0, 0, 0);
+    visibility:visible;
 }
 
 #instructions {
@@ -57,6 +58,37 @@ img{
 #game{
     display: flex;
     justify-content: space-between;
+}
+
+@keyframes jump{
+    0% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-75%);
+    }
+    50% {
+        transform: translateY(-125%);
+    }
+    70% {
+        transform: translateY(-75%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.animate{
+    animation: jump 500ms linear;
+}
+
+@keyframes block{
+    0%{transform: translateX(0);} 
+    100%{transform: translateX(-100vw);}
+}
+
+.block{
+    animation: block 3s infinite linear;
 }
 
 @media screen and (max-width: 768px) {
