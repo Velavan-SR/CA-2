@@ -12,6 +12,7 @@
     let blockState = false;
     let scoreState = false;
     let removeState = false;
+    let bgmState = false;
     let c=0;
     let image='';
     let score = -1;
@@ -33,6 +34,13 @@
         jump();
         jumpEffect.currentTime = 0;
         jumpEffect.play();
+
+        if (!bgmState){
+            let backgroundMusic = new Audio('./assessts/Naruto-ost.mp3');
+            backgroundMusic.play();
+            backgroundMusic.loop = true;
+            bgmState = true;
+        }
 
         document.getElementById('instructions').style.visibility='hidden';
 
