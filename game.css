@@ -62,28 +62,31 @@ img{
 
 @keyframes jump{
     0% {
-        transform: translateY(0);
+        transform: translateY(0) translateX(0);
     }
     30% {
-        transform: translateY(-75%);
+        transform: translateY(-75%) translateX(18%);
     }
     50% {
-        transform: translateY(-125%);
+        transform: translateY(-125%) translateX(36%);
     }
     70% {
-        transform: translateY(-75%);
+        transform: translateY(-75%) translateX(54%);
+    }
+    85% {
+        transform: translateY(0) translateX(72%);
     }
     100% {
-        transform: translateY(0);
+        transform: translateY(0) translateX(90%);
     }
 }
 
 .animate{
-    animation: jump 500ms linear;
+    animation: jump 1250ms linear;
 }
 
 @keyframes block{
-    0%{transform: translateX(0);} 
+    0%{transform: translateX(0vw);} 
     100%{transform: translateX(-100vw);}
 }
 

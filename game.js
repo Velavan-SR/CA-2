@@ -21,13 +21,13 @@
         return Math.floor(Math.random()*2)
     }
 
-    document.body.addEventListener('click',jump);
-
     document.addEventListener("keydown", function(event) {
         if (event.key === ' ') {
           jump();
         }
       });
+
+    document.addEventListener('click',jump);
 
     document.body.addEventListener('click',() =>{
         document.getElementById('instructions').style.visibility='hidden';
@@ -44,14 +44,14 @@
 
     setInterval(function () {
         if (blockState) {
-            block();
+            setTimeout(block,3000);
         }
     },3000);
 
     function jump(){
         if (sasuke.classList != 'animate'){
             sasuke.classList.add("animate");
-            setTimeout(removeJump,500);
+            setTimeout(removeJump,1250);
         }
     };
 
@@ -60,18 +60,14 @@
     };
 
     function block(){
-        blockState = true;
-        image= c%2 === 0 ? `<img src="assessts/block0.gif" id='h'>` : `<img src="assessts/block1.gif" id='h'>`
+        image= c%2 === 0 ? `<img src="assessts/block0.gif" id='h' class='block' >` : `<img src="assessts/block1.gif" id='h' class='block' >`
         game.innerHTML+=image;
         
-        if (document.getElementById('h').classList != 'block'){
-            document.getElementById('h').classList.add("block");
-            console.log('yes')
-            setTimeout(removeBlock,3000);
-        }
+        setTimeout(removeBlock,3000);
+        
+        blockState = true;
 
         c++;
-        // block();
     };
 
     function removeBlock(){
