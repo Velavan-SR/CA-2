@@ -5,7 +5,6 @@
     
     
     const mode = window.localStorage.getItem('id');
-    const sasuke = document.getElementById('sasuke');
     const kakashi = document.getElementById('kakashi');
     const naruto = document.getElementById('naruto');
     const game = document.getElementById('game');
@@ -27,10 +26,13 @@
         }
       });
 
-    document.addEventListener('click',jump);
+    // document.addEventListener('click',jump);
 
     document.body.addEventListener('click',() =>{
+        jump();
+
         document.getElementById('instructions').style.visibility='hidden';
+        
         if (!removeState) {
             kakashi.remove();
             naruto.remove();
@@ -38,9 +40,7 @@
         };
         if (!blockState) {block()};
         if (!scoreState) {setScore()};
-
-        document.body.focus();
-    })
+    });
 
     setInterval(function () {
         if (blockState) {
@@ -49,14 +49,14 @@
     },3000);
 
     function jump(){
-        if (sasuke.classList != 'animate'){
-            sasuke.classList.add("animate");
+        if (document.getElementById('sasuke').classList != 'animate'){
+            document.getElementById('sasuke').classList.add("animate");
             setTimeout(removeJump,1250);
         }
     };
 
     function removeJump(){
-        sasuke.classList.remove("animate");
+        document.getElementById('sasuke').classList.remove('animate');
     };
 
     function block(){
