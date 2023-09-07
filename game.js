@@ -3,7 +3,7 @@
     
     // GAME FUNCTIONALITY
     
-    
+    let jumpEffect = new Audio('./assessts/jump2.mp3');
     const mode = window.localStorage.getItem('id');
     const kakashi = document.getElementById('kakashi');
     const naruto = document.getElementById('naruto');
@@ -23,15 +23,20 @@
     document.addEventListener("keydown", function(event) {
         if (event.key === ' ') {
           jump();
+          jumpEffect.currentTime = 0;
+          jumpEffect.play();
         }
       });
 
-    // document.addEventListener('click',jump);
 
     document.body.addEventListener('click',() =>{
         jump();
+        jumpEffect.currentTime = 0;
+        jumpEffect.play();
 
         document.getElementById('instructions').style.visibility='hidden';
+
+        setInterval(checkDead,10);
         
         if (!removeState) {
             kakashi.remove();
@@ -44,9 +49,9 @@
 
     setInterval(function () {
         if (blockState) {
-            setTimeout(block,3000);
+            setTimeout(block,2500);
         }
-    },3000);
+    },2500);
 
     function jump(){
         if (document.getElementById('sasuke').classList != 'animate'){
@@ -63,7 +68,7 @@
         image= c%2 === 0 ? `<img src="assessts/block0.gif" id='h' class='block' >` : `<img src="assessts/block1.gif" id='h' class='block' >`
         game.innerHTML+=image;
         
-        setTimeout(removeBlock,3000);
+        setTimeout(removeBlock,2500);
         
         blockState = true;
 
@@ -84,4 +89,24 @@
         scoreState = true;
         score++;
         scoree.innerText=score;
+    }
+
+
+
+    // FUNCTIONALITIES FOR CHECKING IF THE ELEMENTS ARE COLLIDING
+
+    function checkDead() {
+        const mainCharacter = document.getElementById('sasuke').getBoundingClientRect();
+        const block = document.querySelector('.block');
+    
+        if (block) {
+            const blockRect = block.getBoundingClientRect();
+            
+            if (mainCharacter.right <= 305 && mainCharacter.bottom < blockRect.top && blockRect.left <= 460) {
+                console.log('Collided');
+                block.style.animation = 'none';
+                block.style.display = 'none';
+                alert('Oops! YOU LOST');
+            }
+        }
     }

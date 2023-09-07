@@ -91,7 +91,7 @@ img{
 }
 
 .block{
-    animation: block 3s infinite linear;
+    animation: block 2.5s infinite linear;
 }
 
 @media screen and (max-width: 768px) {
