@@ -1,3 +1,9 @@
+   
+
+    
+    // GAME FUNCTIONALITY
+    
+    
     const mode = window.localStorage.getItem('id');
     const sasuke = document.getElementById('sasuke');
     const kakashi = document.getElementById('kakashi');
@@ -6,6 +12,7 @@
     const scoree = document.getElementById('timer');
     let blockState = false;
     let scoreState = false;
+    let removeState = false;
     let c=0;
     let image='';
     let score = -1;
@@ -14,16 +21,25 @@
         return Math.floor(Math.random()*2)
     }
 
+    document.body.addEventListener('click',jump);
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === ' ') {
+          jump();
+        }
+      });
+
     document.body.addEventListener('click',() =>{
         document.getElementById('instructions').style.visibility='hidden';
-        kakashi.remove();
-        naruto.remove();
-        console.log("click event")
-        console.log(kakashi,naruto)
-        jump();
+        if (!removeState) {
+            kakashi.remove();
+            naruto.remove();
+            removeState=true;
+        };
         if (!blockState) {block()};
         if (!scoreState) {setScore()};
-        
+
+        document.body.focus();
     })
 
     setInterval(function () {

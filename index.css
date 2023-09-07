@@ -57,6 +57,7 @@ h2,h1,p,h4{
     width: 170px;
     opacity: 0.6;
     border-radius: 5px;
+    text-align: center;
 }
 
 .btns{
