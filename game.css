@@ -91,13 +91,25 @@ img{
     animation: jump 1250ms linear;
 }
 
+.animate-hard{
+    animation: jump 600ms linear;
+}
+
 @keyframes block{
     0%{transform: translateX(0vw);} 
     100%{transform: translateX(-100vw);}
 }
 
 .block{
-    animation: block 2.5s infinite linear;
+    animation: block 3s infinite linear;
+}
+
+.block-mid{
+    animation: block 2s infinite linear;
+}
+
+.block-hard{
+    animation: block 1.5s infinite linear;
 }
 
 @media screen and (max-width: 768px) {
