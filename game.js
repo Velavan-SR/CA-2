@@ -114,12 +114,10 @@ if(window.localStorage.getItem('id')=='easy'){
         score++;
         scoree.innerText=score;
     }
-};
 
+     // FUNCTIONALITIES FOR CHECKING IF THE ELEMENTS ARE COLLIDING
 
-    // FUNCTIONALITIES FOR CHECKING IF THE ELEMENTS ARE COLLIDING
-
-    function checkDead() {
+     function checkDead() {
         const mainCharacter = document.getElementById('sasuke').getBoundingClientRect();
         const block = document.querySelector('.block');
     
@@ -139,6 +137,8 @@ if(window.localStorage.getItem('id')=='easy'){
     }
 
 
+
+};
 
         // Mid Gameplay
 
@@ -229,7 +229,6 @@ if(window.localStorage.getItem('id')=='mid'){
         score++;
         scoree.innerText=score;
     }
-};
 
 
     // FUNCTIONALITIES FOR CHECKING IF THE ELEMENTS ARE COLLIDING
@@ -252,6 +251,8 @@ if(window.localStorage.getItem('id')=='mid'){
             }
         }
     }
+
+};
 
 
         //Hard Gameplay
@@ -344,8 +345,6 @@ if(window.localStorage.getItem('id')=='hard'){
         score++;
         scoree.innerText=score;
     }
-};
-
 
     // FUNCTIONALITIES FOR CHECKING IF THE ELEMENTS ARE COLLIDING
 
@@ -367,3 +366,5 @@ if(window.localStorage.getItem('id')=='hard'){
             }
         }
     }
+
+};

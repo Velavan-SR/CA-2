@@ -70,6 +70,10 @@ h2,h1,p,h4{
     cursor: pointer;
 }
 
+.btns:hover{
+    opacity: 1;
+}
+
 .btn-container{
     display: flex;
     flex-direction: row;
