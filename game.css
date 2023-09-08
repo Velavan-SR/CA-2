@@ -91,6 +91,10 @@ img{
     animation: jump 1250ms linear;
 }
 
+.animate-mid{
+    animation: jump 900ms linear;
+}
+
 .animate-hard{
     animation: jump 600ms linear;
 }
@@ -140,4 +144,17 @@ img{
     #game img:nth-child(2) {
         display: none;
     }
+
+    .block{
+        animation-duration: 3s;
+    }
+
+    .block-mid{
+        animation-duration: 2s;
+    }
+
+    .block-hard{
+        animation-duration: 1.5s;
+    }
+
 }

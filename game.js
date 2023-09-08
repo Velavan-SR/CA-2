@@ -185,14 +185,14 @@ if(window.localStorage.getItem('id')=='mid'){
                 },2000);
 
     function jump(){
-        if (document.getElementById('sasuke').classList != 'animate'){
-            document.getElementById('sasuke').classList.add("animate");
-            setTimeout(removeJump,1250);
+        if (document.getElementById('sasuke').classList != 'animate-mid'){
+            document.getElementById('sasuke').classList.add("animate-mid");
+            setTimeout(removeJump,900);
         }
     };
 
     function removeJump(){
-        document.getElementById('sasuke').classList.remove('animate');
+        document.getElementById('sasuke').classList.remove('animate-mid');
     };
 
     function block() {
