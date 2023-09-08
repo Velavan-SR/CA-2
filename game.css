@@ -157,4 +157,9 @@ img{
         animation-duration: 1.5s;
     }
 
+    /* @keyframes block{
+        0%{transform: translateX(250px);} 
+        100%{transform: translateX(10px);}
+    } */
+
 }

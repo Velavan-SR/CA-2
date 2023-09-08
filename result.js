@@ -3,7 +3,7 @@ const phrase = document.getElementById('phrase');
 let arr =['SERIOUSLY BRO ??',"I DON'T SEE A BRIGHT FUTURE :(",'WE NEED MOREEE!!!','TRY HARDERRR !!','YOU CAN DO BETTER!','YOU WERE ALMOST THERE :)','YOU KNOW NO BOUNDS !!!']
 
 let score = window.localStorage.getItem('score')
-scoreSpan.innerText = score;
+scoreSpan.innerText = window.localStorage.getItem('nickname')+' : '+score;
 
 if(score>=0 && score<11){
     phrase.innerText = arr[0]
@@ -21,8 +21,28 @@ if(score>=0 && score<11){
     phrase.innerText = arr[6];
 }
 
+// document.getElementById('highscore').innerText = 
+
 document.getElementById('play-again').addEventListener('click',gameover);
 
 function gameover(){
     window.location.href = 'game.html';
+}
+
+document.getElementById('home').addEventListener('click',goHome);
+
+function goHome(){
+    window.location.href = 'index.html';
+}
+
+window.onload =()=>{
+    let highscore = localStorage.getItem('highscore');
+
+    if(!highscore || parseInt(highscore)<=parseInt(score)){
+        highscore = score;
+        localStorage.setItem('highscore',highscore);
+    }else if(score>highscore){
+        localStorage.setItem('highscore',score);
+    }
+    document.getElementById('highscore').innerText = 'HIGH-SCORE : '+localStorage.getItem('highscore')+' SECONDS'
 }

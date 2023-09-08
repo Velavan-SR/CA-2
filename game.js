@@ -130,7 +130,6 @@ if(window.localStorage.getItem('id')=='easy'){
                 scoreState = false;
                 backgroundMusic.pause();
                 window.localStorage.setItem('score',score);
-                alert('Oops! YOU LOST');
                 window.location.href='result.html';
             }
         }
@@ -246,7 +245,6 @@ if(window.localStorage.getItem('id')=='mid'){
                 scoreState = false;
                 backgroundMusic.pause();
                 window.localStorage.setItem('score',score);
-                alert('Oops! YOU LOST');
                 window.location.href='result.html';
             }
         }
@@ -361,7 +359,6 @@ if(window.localStorage.getItem('id')=='hard'){
                 scoreState = false;
                 backgroundMusic.pause();
                 window.localStorage.setItem('score',score);
-                alert('Oops! YOU LOST');
                 window.location.href='result.html';
             }
         }
