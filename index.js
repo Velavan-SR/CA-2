@@ -4,8 +4,6 @@ const nameInput = document.getElementById('name');
 const nicknameInput = document.getElementById('nickname');
 let flag = true;
 
-nameInput.addEventListener('change', handleInputChange);
-nicknameInput.addEventListener('change', handleInputChange);
 
 function handleInputChange() {
     const nameValue = nameInput.value;

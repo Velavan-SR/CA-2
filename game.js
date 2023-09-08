@@ -13,9 +13,12 @@
     let scoreState = false;
     let removeState = false;
     let bgmState = false;
+    let gameStopped = false;
     let c=0;
     let image='';
     let score = -1;
+    let intervalId;
+    let backgroundMusic;
 
     function randum(){
         return Math.floor(Math.random()*2)
@@ -36,7 +39,7 @@
         jumpEffect.play();
 
         if (!bgmState){
-            let backgroundMusic = new Audio('./assessts/Naruto-ost.mp3');
+            backgroundMusic = new Audio('./assessts/Naruto-ost.mp3');
             backgroundMusic.play();
             backgroundMusic.loop = true;
             bgmState = true;
@@ -55,11 +58,11 @@
         if (!scoreState) {setScore()};
     });
 
-    setInterval(function () {
-        if (blockState) {
-            setTimeout(block,2500);
-        }
-    },2500);
+    intervalId = setInterval(function () {
+                    if (blockState) {
+                    setTimeout(block,2500);
+                    }
+                },2500);
 
     function jump(){
         if (document.getElementById('sasuke').classList != 'animate'){
@@ -72,16 +75,24 @@
         document.getElementById('sasuke').classList.remove('animate');
     };
 
-    function block(){
-        image= c%2 === 0 ? `<img src="assessts/block0.gif" id='h' class='block' >` : `<img src="assessts/block1.gif" id='h' class='block' >`
-        game.innerHTML+=image;
-        
-        setTimeout(removeBlock,2500);
-        
-        blockState = true;
-
-        c++;
-    };
+    function block() {
+        if (gameStopped) {
+            clearInterval(intervalId);
+        } else {
+            const image = document.createElement("img");
+            image.src = c % 2 === 0 ? "assessts/block0.gif" : "assessts/block1.gif";
+            image.id = "h";
+            image.className = "block";
+            game.appendChild(image);
+            
+            setTimeout(removeBlock, 2500);
+            
+            blockState = true;
+            
+            c++;
+        }
+    }
+    
 
     function removeBlock(){
         document.getElementById('h').remove()
@@ -110,11 +121,14 @@
         if (block) {
             const blockRect = block.getBoundingClientRect();
             
-            if (mainCharacter.right <= 305 && mainCharacter.bottom < blockRect.top && blockRect.left <= 460) {
-                console.log('Collided');
-                block.style.animation = 'none';
-                block.style.display = 'none';
+            if (window.innerHeight - mainCharacter.bottom < 250 && blockRect.left <= 225 && blockRect.left >=105) {
+                gameStopped = true;
+                blockState = false;
+                scoreState = false;
+                backgroundMusic.pause();
+                window.localStorage.setItem('score',score);
                 alert('Oops! YOU LOST');
+                window.location.href='result.html';
             }
         }
     }

@@ -51,6 +51,11 @@ body{
 }
 
 img{
+    height: 250px;
+    width: 190px;
+}
+
+#sasuke{
     height: 300px;
     width: 250px;
 }
@@ -58,26 +63,27 @@ img{
 #game{
     display: flex;
     justify-content: space-between;
+    align-items: end;
 }
 
 @keyframes jump{
     0% {
-        transform: translateY(0) translateX(0);
+        transform: translateY(0);
     }
     30% {
-        transform: translateY(-75%) translateX(18%);
+        transform: translateY(-75%);
     }
     50% {
-        transform: translateY(-125%) translateX(36%);
+        transform: translateY(-125%);
     }
     70% {
-        transform: translateY(-75%) translateX(54%);
+        transform: translateY(-75%);
     }
     85% {
-        transform: translateY(0) translateX(72%);
+        transform: translateY(0);
     }
     100% {
-        transform: translateY(0) translateX(90%);
+        transform: translateY(0);
     }
 }
 
