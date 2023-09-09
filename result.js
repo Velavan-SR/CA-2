@@ -1,5 +1,5 @@
 const scoreSpan = document.getElementById('scoreBoard');
-const phrase = document.getElementById('phrase');
+const phrase = document.getElementById('phrase')
 let arr =['SERIOUSLY BRO ??',"I DON'T SEE A BRIGHT FUTURE :(",'WE NEED MOREEE!!!','TRY HARDERRR !!','YOU CAN DO BETTER!','YOU WERE ALMOST THERE :)','YOU KNOW NO BOUNDS !!!']
 
 let score = window.localStorage.getItem('score')
@@ -8,7 +8,7 @@ scoreSpan.innerText = window.localStorage.getItem('nickname')+' : '+score;
 if(score>=0 && score<11){
     phrase.innerText = arr[0]
 }else if(score>=11 && score<21){
-    phrase.innerText = arr[1]
+    phrase.innerText = arr[0]
 }else if(score>=21 && score<31){
     phrase.innerText = arr[2]
 }else if(score>=31 && score<41){
@@ -35,14 +35,3 @@ function goHome(){
     window.location.href = 'index.html';
 }
 
-window.onload =()=>{
-    let highscore = localStorage.getItem('highscore');
-
-    if(!highscore || parseInt(highscore)<=parseInt(score)){
-        highscore = score;
-        localStorage.setItem('highscore',highscore);
-    }else if(score>highscore){
-        localStorage.setItem('highscore',score);
-    }
-    document.getElementById('highscore').innerText = 'HIGH-SCORE : '+localStorage.getItem('highscore')+' SECONDS'
-}

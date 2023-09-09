@@ -51,13 +51,13 @@ body{
 }
 
 img{
-    height: 250px;
-    width: 190px;
+    height: 33vh;
+    width: 15vw;
 }
 
 #sasuke{
-    height: 300px;
-    width: 250px;
+    height: 40vh;
+    width: 20vw;
 }
 
 #game{
@@ -105,15 +105,15 @@ img{
 }
 
 .block{
-    animation: block 3s infinite linear;
+    animation: block 3.5s infinite linear;
 }
 
 .block-mid{
-    animation: block 2s infinite linear;
+    animation: block 2.5s infinite linear;
 }
 
 .block-hard{
-    animation: block 1.5s infinite linear;
+    animation: block 1.75s infinite linear;
 }
 
 @media screen and (max-width: 768px) {
@@ -136,30 +136,29 @@ img{
         position: relative;
     }
     
-    #game img {
-        height: 150px;
-        width: 125px;
+    img{
+        height: 20vh;
+        width: 25vw;
     }
     
-    #game img:nth-child(2) {
+    #sasuke{
+        height: 25vh;
+        width: 30vw;
+    }
+    
+    #kakashi{
         display: none;
     }
 
     .block{
-        animation-duration: 3s;
+        animation-duration: 3.5s;
     }
 
     .block-mid{
-        animation-duration: 2s;
+        animation-duration: 2.5s;
     }
 
     .block-hard{
-        animation-duration: 1.5s;
+        animation-duration: 1.75s;
     }
-
-    /* @keyframes block{
-        0%{transform: translateX(250px);} 
-        100%{transform: translateX(10px);}
-    } */
-
 }

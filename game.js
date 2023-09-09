@@ -19,6 +19,7 @@
     let score = -1;
     let intervalId;
     let backgroundMusic;
+    // localStorage.setItem('highscore',0);
 
     function randum(){
         return Math.floor(Math.random()*2)
@@ -65,9 +66,9 @@ if(window.localStorage.getItem('id')=='easy'){
 
     intervalId = setInterval(function () {
                     if (blockState) {
-                    setTimeout(block,3000);
+                    setTimeout(block,3500);
                     }
-                },3000);
+                },3500);
 
     function jump(){
         if (document.getElementById('sasuke').classList != 'animate'){
@@ -90,7 +91,7 @@ if(window.localStorage.getItem('id')=='easy'){
             image.className = "block";
             game.appendChild(image);
             
-            setTimeout(removeBlock, 3000);
+            setTimeout(removeBlock, 3500);
             
             blockState = true;
             
@@ -124,12 +125,12 @@ if(window.localStorage.getItem('id')=='easy'){
         if (block) {
             const blockRect = block.getBoundingClientRect();
             
-            if (window.innerHeight - mainCharacter.bottom < 250 && blockRect.left <= 225 && blockRect.left >=105) {
+            if (window.innerHeight - mainCharacter.bottom < 250 && blockRect.left <= 205 && blockRect.left >=105) {
                 gameStopped = true;
                 blockState = false;
                 scoreState = false;
                 backgroundMusic.pause();
-                window.localStorage.setItem('score',score);
+                localStorage.setItem('score',score);
                 window.location.href='result.html';
             }
         }
@@ -179,9 +180,9 @@ if(window.localStorage.getItem('id')=='mid'){
 
     intervalId = setInterval(function () {
                     if (blockState) {
-                    setTimeout(block,2000);
+                    setTimeout(block,2500);
                     }
-                },2000);
+                },2500);
 
     function jump(){
         if (document.getElementById('sasuke').classList != 'animate-mid'){
@@ -204,7 +205,7 @@ if(window.localStorage.getItem('id')=='mid'){
             image.className = "block-mid";
             game.appendChild(image);
             
-            setTimeout(removeBlock, 2000);
+            setTimeout(removeBlock, 2500);
             
             blockState = true;
             
@@ -239,12 +240,12 @@ if(window.localStorage.getItem('id')=='mid'){
         if (block) {
             const blockRect = block.getBoundingClientRect();
             
-            if (window.innerHeight - mainCharacter.bottom < 250 && blockRect.left <= 225 && blockRect.left >=105) {
+            if (window.innerHeight - mainCharacter.bottom < 250 && blockRect.left <= 205 && blockRect.left >=105) {
                 gameStopped = true;
                 blockState = false;
                 scoreState = false;
                 backgroundMusic.pause();
-                window.localStorage.setItem('score',score);
+                localStorage.setItem('score',score);
                 window.location.href='result.html';
             }
         }
@@ -294,9 +295,9 @@ if(window.localStorage.getItem('id')=='hard'){
 
     intervalId = setInterval(function () {
                     if (blockState) {
-                    setTimeout(block,1500);
+                    setTimeout(block,1750);
                     }
-                },1500);
+                },1750);
 
     function jump(){
         if (document.getElementById('sasuke').classList != 'animate-hard'){
@@ -319,7 +320,7 @@ if(window.localStorage.getItem('id')=='hard'){
             image.className = "block-hard";
             game.appendChild(image);
             
-            setTimeout(removeBlock, 1500);
+            setTimeout(removeBlock, 1750);
             
             blockState = true;
             
@@ -353,12 +354,12 @@ if(window.localStorage.getItem('id')=='hard'){
         if (block) {
             const blockRect = block.getBoundingClientRect();
             
-            if (window.innerHeight - mainCharacter.bottom < 250 && blockRect.left <= 225 && blockRect.left >=105) {
+            if (window.innerHeight - mainCharacter.bottom < 250 && blockRect.left <= 205 && blockRect.left >=105) {
                 gameStopped = true;
                 blockState = false;
                 scoreState = false;
                 backgroundMusic.pause();
-                window.localStorage.setItem('score',score);
+                localStorage.setItem('score',score);
                 window.location.href='result.html';
             }
         }
