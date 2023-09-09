@@ -35,3 +35,13 @@ function goHome(){
     window.location.href = 'index.html';
 }
 
+window.onload() =function(){
+    let highscore = localStorage.getItem('highscore');
+
+    if(!highscore || parseInt(highscore)<=parseInt(score)){
+        highscore=score;
+        localStorage.setItem('highscore',highscore);
+    }
+
+    document.getElementById('highscore').innerText = 'HIGHSCORE : '+parseInt(localStorage.getItem('highscore'));
+}
